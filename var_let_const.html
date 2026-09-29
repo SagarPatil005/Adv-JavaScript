@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+
+
+    <script>
+        // global scope 
+        var a = "Hi its sagar ";
+        var a = "hi its vaibhav"; // re-declare allow 
+
+        a = "hi its om";  // re-assign allow 
+
+        console.log(a);
+        //functional Scope or block Scope 
+        let b = "hello sunil";
+        //  let b="welcome";  // redclare not allow    SyntaxError
+        b = "welcome karan";  // re-assign allow
+
+        console.log(b);
+
+        const c = "hello";
+        // const c="hello shyam"; // redeclare not allowed        SyntaxError
+        //      c="welcome Jay";  // re-assign not allwoed      TypeError
+
+        console.log(c);
+
+        if (10 == 10) {
+            var x = "hello neha";
+            let y = "hello sonal";
+            const z = "hello samri=usshi";
+            console.log(x);
+            console.log(y);
+            console.log(z);
+
+        }
+
+        console.log(x);
+        //console.log(y);   not defined 
+        //console.log(z);   not defined 
+    </script>
+
+
+    <script>
+
+        function example() {
+            var p = 1;  // global scope
+            let q = 2;  // block scope
+            const r = 3;  // block scope
+
+            if (true) {  // inside this block
+                var p = 10;
+                let q = 20;
+                const r = 30;
+                 
+                // inside this block
+                document.write("-----inside this block-------- <br>")
+                document.write("p = " + p + "<br>"); //10
+                document.write("q = " + q + "<br>"); //20
+                document.write("r = " + r + "<br><br>"); //30
+
+
+            }
+
+              // outside this block
+                document.write("-----outside this block--------<br>")
+                document.write("p = " + p + "<br>"); //10      p is global variable
+                document.write("q = " + q + "<br>"); //2
+                document.write("r = " + r + "<br><br>"); //3
+
+        }
+
+        example();
+
+    </script>
+
+</body>
+
+</html>
