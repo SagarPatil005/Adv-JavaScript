@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Page Title</title>
+
+</head>
+
+<body>
+    <script>
+        //object destructuring old style 
+        const person = {
+            name: "Sagar",
+            age: 22,
+            gender: "Male"
+        }
+        document.write(`Name is: ${person.name} Age is: ${person.age} Gender is: ${person.gender} <br>`);
+
+        // old style 
+        let name = person.name;
+        let age = person.age;
+        let gender = person.gender;
+
+        console.log(name);
+        console.log(age);
+        console.log(gender);
+
+    </script>
+
+    <script>
+        //object destructuring New style
+        const person1 = {
+            name1: "Ram",
+            age1: 24,
+            gender1: "Male"
+        }
+
+        const { name1, age1, gender1 } = person1;
+        console.log(name1);
+        console.log(age1);
+        console.log(gender1);
+
+        document.write(`Name is: ${name1} Age is: ${age1} Gender is: ${gender1}<br>`);
+
+    </script>
+
+
+    <script>
+        //destructuring in function parameter 
+        function showInfo({ name, age, city }) {
+            document.write(`Name : ${name} Age : ${age} City : ${city}  <br>`)
+        }
+
+        const person2 = { name: 'Raj', age: 20, city: 'Jalgaon' };
+        showInfo(person2);
+
+    </script>
+
+    <script>
+        //Nested Object 
+        const student = {
+            uname: 'Rahul',
+            marks: { maths: 45, science: 98 }
+        }
+
+        const { uname, marks: { maths, science } } = student;
+        document.write(`<br> Username: ${uname}, Math: ${maths}, Science: ${science}`);
+
+    </script>
+
+    <script>
+        //Array Destructuring 
+        const arrValue = ["one", "two","three"];
+
+        const [ x, y, z ] = arrValue;
+        console.log(x);
+        console.log(y);
+        console.log(z);
+
+    </script>
+
+    <script>
+        //swap variables using destructuring
+        let a=5,b=10;
+
+        [a,b]=[b,a];
+
+        document.write(`<br> a= ${a} b= ${b}`);
+
+    </script>
+    <script>
+        // rest operator in destructuring
+        const numbers=[10,20,30,40,50,60,70];
+        const [first,second,...rest] =numbers;
+
+        document.write(`<br> First Number: ${first} , Second Number: ${second} , Rest Numbers: ${rest}`);
+
+    </script>
+
+</body>
+
+</html>
