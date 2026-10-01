@@ -53,6 +53,7 @@
 
     <script>
 
+        
         function example() {
             var p = 1;  // global scope
             let q = 2;  // block scope
@@ -62,7 +63,7 @@
                 var p = 10;
                 let q = 20;
                 const r = 30;
-                 
+
                 // inside this block
                 document.write("-----inside this block-------- <br>")
                 document.write("p = " + p + "<br>"); //10
@@ -72,11 +73,11 @@
 
             }
 
-              // outside this block
-                document.write("-----outside this block--------<br>")
-                document.write("p = " + p + "<br>"); //10      p is global variable
-                document.write("q = " + q + "<br>"); //2
-                document.write("r = " + r + "<br><br>"); //3
+            // outside this block
+            document.write("-----outside this block--------<br>")
+            document.write("p = " + p + "<br>"); //10      p is global variable
+            document.write("q = " + q + "<br>"); //2
+            document.write("r = " + r + "<br><br>"); //3
 
         }
 

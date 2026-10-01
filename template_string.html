@@ -5,7 +5,7 @@
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <title>Page Title</title>
-    <link rel='stylesheet' href='main.css'>
+    
 </head>
 
 <body>
@@ -24,7 +24,29 @@
 
         document.write(`My Name is ${name} , I am from ${address} , Contact me on ${phone}.`);
 
-        // Template String/literal are string written using  (` `) that allow us  to easily insert variables or expression using ${}
+        // Template String/literal are string written using  (` `) that allow us  to easily insert variables or expression using ${} 
+
+    </script>
+
+    <script>
+
+        var fname = "sagar";
+        var lname = "patil";
+
+        function fullName(fname, lname) {
+            return `${fname}  ${lname}`;
+        }
+
+        let flname = `Hello ${fullName(fname, lname)}`;
+        document.write("<br><br>");
+        document.write(fullName(fname, lname));
+        document.write("<br>");
+        document.write(flname);
+        
+        console.log(fullName(fname,lname));
+        console.log(flname);
+
+
 
     </script>
 </body>
