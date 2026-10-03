@@ -1,34 +1,75 @@
 <!DOCTYPE html>
 <html lang='en'>
+
 <head>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <title>Page Title</title>
-    
+    <title>Rest Operator</title>
+
 </head>
+
 <body>
     <script>
-      const sum= (num1,num2) =>{
-          document.write(num1+num2 + "<br>");
-      }
-      sum(10,28);
-      sum(10,30,28);
+        const sum = (num1, num2) => {
+            document.write(num1 + num2 + "<br>");
+        }
+        sum(10, 28);
+        sum(10, 30, 28);
     </script>
-    
+
     <script>
 
-    const add=(...numbers)  => {
-        let sum=0;
-        for(let i in numbers){
-            sum+=numbers[i];
+        const add = (...numbers) => {
+            let sum = 0;
+            for (let i in numbers) {
+                sum += numbers[i];
+            }
+            document.write(sum + "<br>")
         }
-         document.write(sum + "<br>")
-    }
-    add(1,2,4,6,3,3,6,4);
-    add(1,2,5,4,7,54,2,6,3,3,6,4);
-    add(23,21)
-   
+        add(1, 2, 4, 6, 3, 3, 6, 4);
+        add(1, 2, 5, 4, 7, 54, 2, 6, 3, 3, 6, 4);
+        add(23, 21)
+    </script>
+    <script>
 
+        function sumRest(name, ...args) {
+            document.write(`<br> Hello ${name}  `);
+            let sum = 0;
+            for (let i in args) {
+                sum += args[i];
+            }
+            document.write(`<br>Total Sum of Marks: ${sum}`);
+        }
+        sumRest("Raj", 45, 64, 56, 76, 33, 76);
+
+        function studRest(name, course, address, ...subject) {
+            document.write(`<br> Name is: ${name}, Course is:  ${course}, Address is:  ${address}, Subjects is:  ${subject} <br>`);
+
+        }
+        studRest("Ram", "BCA", "Pune", "java", "c", "C++");
+    </script>
+    <script>
+        function studentInfo(name, address, ...subjects) {
+            document.write(`Student Name : ${name} <br>`);
+            document.write(`Address : ${address} <br>`);
+            document.write(`Subjects : ${subjects}`);
+        }
+        studentInfo("Amit", "Pune", "C#", "DSA", "Python");
+    </script>
+    <script>
+        function showSum(name,...numbers){
+            let total=0;
+            for(let i in numbers){
+                total+=numbers[i];
+            }
+            console.log(`Hello ${name} `);
+            console.log(`You Enterd ${numbers.length}  Numbers: ${numbers.join(", ")}`)
+            console.log(`Total : ${total}`);
+        }
+        showSum("Ganesh",23,23,211,4,3);
+
+        // Rest Operator Allows a function to accept  any number of arguments and collect them in array
     </script>
 </body>
+
 </html>
