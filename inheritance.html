@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Page Title</title>
+   
+</head>
+<body>
+    <script>
+ //Inheritance 
+   //Parent Class
+    class Person{
+        constructor(name,age){
+            this.name=name;
+            this.age=age;
+        }
+        showInfo(){
+            document.write(`<h1> Person Info:</h1> <br>  Name: ${this.name} <br> Age: ${this.age}`);
+        }
+    }
+
+  //Child Class
+    class Student extends Person{
+        constructor(name,age,rollNo){
+            super(name,age);
+            this.rollNo=rollNo;
+        }
+
+        showStudent(){
+            document.write(`<h1> Student Info:</h1> <br> Name: ${this.name} <br> Age: ${this.age} <br> Roll No: ${this.rollNo}`);
+          
+        }
+    }
+
+    //Child Class
+    class Employee extends Person{
+        constructor(name,age,salary,empId){
+            super(name,age);
+            this.salary=salary;
+            this.empId=empId;
+        }
+
+        showEmployee(){
+            document.write(`<h1> Employee Info: </h1>  <br> Name: ${this.name}  <br> Age: ${this.age} <br> Salary: ${this.salary} <br> Employee Id: ${this.empId}`);
+           
+        }
+    }
+  
+    let p=new Student("sagar",22,111);
+    p.showStudent();
+
+    let e=new Employee("vaibhav",21,20000,12);
+    e.showEmployee();
+    e.showInfo();
+    
+
+    </script>
+</body>
+</html>

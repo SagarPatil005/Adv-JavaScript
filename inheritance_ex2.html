@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Page Title</title>
+
+</head>
+
+<body>
+    <script>
+        //Inheritance 
+        //Parent Class
+        class Person {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+            showInfo() {
+                document.write(`<h1> Person Info:</h1> <br>  Name: ${this.name} <br> Age: ${this.age}`);
+            }
+        }
+
+        //Child Class
+        class Student extends Person {
+            constructor(name, age, rollNo) {
+                super(name, age);
+                this.rollNo = rollNo;
+            }
+
+            showStudent() {
+                document.write(`<h1> Student Info:</h1> <br> Name: ${this.name} <br> Age: ${this.age} <br> Roll No: ${this.rollNo}`);
+
+            }
+        }
+
+        class GraduateStudent extends Student{
+             constructor(name, age, rollNo,degree) {
+                super(name, age,rollNo);
+                this.degree = degree;
+            }
+
+        showGraduateStudent() {
+                document.write(`<br> Degree: ${this.degree}`);
+
+            }
+        }
+
+        let g1=new GraduateStudent("Raj",19,101,"BCA")
+        g1.showStudent();
+        g1.showGraduateStudent();
+        g1.showInfo();
+
+    </script>
+</body>
+
+</html>

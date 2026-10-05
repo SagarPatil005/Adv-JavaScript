@@ -46,6 +46,64 @@
 
 
     </script>
+
+    <script>
+     //Constructor
+    class student1{
+        constructor(){
+            document.write("Hello Constructer Called <br>");
+        }
+    }
+
+    let stu1= new student1();
+
+    </script>
+    <script>
+    //Constructor with parameter 
+        class person{
+            constructor(name,age){
+                this.name=name;
+                this.age=age;
+                this.display();
+            }
+
+            display(){
+                 document.write(`Name is: ${this.name} and Age is: ${this.age} <br>`);
+            }
+        }
+
+        let p=new person("sagar",22);
+        //p.display();
+
+        let p1=new person("vaibhav",21);
+        //p1.display();
+
+    </script>
+    <script>
+     //Constructor with parameter and static method
+        class students{
+    
+            constructor(name,course){
+                this.name=name;
+                this.course=course;
+                this.display();
+            }
+
+            display(){
+                console.log(`Name: ${this.name} `);
+                console.log(`Course: ${this.course}`);
+            }
+
+            static collegeName(){
+                console.log(`College Name: PCCODE`);
+            }
+        }
+
+        let stud=new students("Om","DA");
+        students.collegeName();
+       
+    </script>
+    
 </body>
 
 </html>
