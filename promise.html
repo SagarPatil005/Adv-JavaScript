@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Page Title</title>
+
+</head>
+
+<body>
+    <!-- Promise Means: eg. I am doing some work now. I will give result later . If the word done successfully then i will give you result otherwise i will give error -->
+
+    <!--
+   Technical Use:
+   -calling an API
+   -fetching data from serverr
+   -reading file
+   -database operation 
+   -waiting for timer 
+
+   Total Three states of Promise 
+   1.Pending:Initial State, before promise succeeds or fails.
+   2.Fulfilled: The operation completed.
+   3.Reject : The Operation Failled.
+   -->
+
+    <!--
+   Syntax:
+     let promise=new Promise(function(resolve,reject){
+     });
+   -->
+    <script>
+        //Example 1
+        let promise = new Promise(function (resolve, reject) {
+            let success = true;
+
+            if (success) {
+                resolve("Operation Success");
+            }
+            else {
+                reject("Operation Failled!");
+            }
+        });
+    </script>
+    <script>
+        function login(username, password) {
+            return new Promise(function (resolve, reject) {
+                if (username === "admin" && password === "1234") {
+                    resolve("Login Successfully:");
+                }
+                else {
+                    reject("Invalid Username or Password");
+                }
+            });
+        }
+
+        login("admin", "1234")
+            .then(function (result) {
+                console.log(result);
+            })
+             .catch (function(error) {
+            console.log(error);
+            })
+
+    </script>
+    <!-- <script>
+        // creating Promise using prompt - UserInput 
+       let promise2=new Promise(function(resolve2,reject2){
+            let username=prompt("Enter UserName:");
+            let password=prompt("Enter Password:");
+
+             if (username === "admin" && password === "1234") {
+                    resolve2("Login Successfully:");
+                }
+                else {
+                    reject2("Invalid Username or Password");
+                }
+       }) ;
+
+       promise2
+            .then(msg => {
+                document.write("<h2 style='color:green'>" + msg + "</h2>");
+            })
+            .catch(err => {
+                document.write("<h2 style='color:red'>" + err + "</h2>");
+            })
+            .finally(() => {
+                document.write("<p style='color:blue'> Login attempt Complete </p>");
+            })
+    </script> -->
+    <script>
+        let promise3=new Promise((resolve,reject) => {
+            console.log("Fetching data.....");
+
+            setTimeout(() => {
+                let dataAvailable=false;
+                if(dataAvailable){
+                    resolve("Data Received from Server... Successfully:");
+                }else{
+                    reject("Server Error: Something went wrong!");
+                }
+            },5000);
+        });
+
+        promise3
+                .then(result => console.log(result))
+                .catch(err => console.log(err))
+                .finally(() => console.log("Request Process Complete..."))
+
+    </script>
+</body>
+
+</html>
