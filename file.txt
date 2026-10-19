@@ -1,0 +1,2 @@
+loading the file using fetch
+working with ajax

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Page Title</title>
+
+</head>
+
+<body>
+    <h2>Load Local Data </h2>
+    <button onclick="loadText()">Load Text File</button>
+    <button onclick="loadJSON()">Load JSON </button>
+
+    <pre id="ajaxData">Click a button to load Data</pre>
+
+    <script>
+        function loadText() {
+            var xhr = new XMLHttpRequest();   // create new ajax request object 
+
+            xhr.open("GET", "file.txt", true);
+            //Get : type of request 
+            //file.txt: file to load 
+
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    document.getElementById("ajaxData").textContent = xhr.responseText;
+                }else {
+                    document.getElementById("ajaxData").textContent = "Error Loading Text File";
+                }
+            }
+            xhr.onerror=function(){
+                document.getElementById("ajaxData").textContent="Request failled";
+            }
+            xhr.send();
+        }
+
+        function loadJSON() {
+            var xhr = new XMLHttpRequest();   // create new ajax request object 
+
+            xhr.open("GET", "data.json", true);
+            //Get : type of request 
+            //file.txt: file to load 
+
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    var data = JSON.parse(xhr.responseText);
+                      document.getElementById("ajaxData").textContent=JSON.stringify(data,null,4);
+                  
+                    
+                }else {
+                    document.getElementById("ajaxData").textContent = "Error Loading Text File";
+                }
+            }
+            xhr.onerror=function(){
+                document.getElementById("ajaxData").textContent="Request failled";
+            }
+            xhr.send();
+        }
+    </script>
+</body>
+
+</html>
