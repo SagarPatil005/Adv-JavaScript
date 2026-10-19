@@ -1,39 +1,61 @@
 <!DOCTYPE html>
 <html lang='en'>
+
 <head>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <title>Page Title</title>
 
 </head>
+
 <body>
     <h3>Async Await Example </h3>
     <p id="output"></p>
     <script>
-        const output=document.getElementById("output");
+        const output = document.getElementById("output");
 
-        function log(msg){
-            output.textContent += msg;
+        function log(msg) {
+            output.innerHTML += msg + "<br>";
         }
 
-        function boilWater(){
-            return new Promise((resolve) =>{
-                setTimeout(() => resolve("Water Boiled..."),3000);
+        function boilWater() {
+            return new Promise((resolve) => {
+                setTimeout(() => resolve("Water Boiled...  "), 3000);
             });
         }
 
-        function makeTea(){
-            return new Promise((resolve) =>{
-                setTimeout(() => resolve("Tea is Ready..."),3000);
+        function makeTea() {
+            return new Promise((resolve) => {
+                setTimeout(() => resolve("Tea is Ready...  "), 3000);
             });
         }
 
-        function toastBread(){
-            return new Promise((resolve) =>{
-                setTimeout(() => resolve("Bread  Taosted..."),3000);
+        function toastBread() {
+            return new Promise((resolve) => {
+                setTimeout(() => resolve("Bread  Taosted...  "), 3000);
             });
         }
+
+        async function makeBreakFast() {
+            try {
+                log("Starting  breakfast  preparation...");
+                const step1 = await boilWater();
+                log("1 " + step1);
+                const step2 = await makeTea();
+                log("2 " + step2);
+                const step3 = await toastBread();
+                log("3 " + step3);
+                log("All Breakfast items ready to eat");
+            }
+            catch (error) {
+                log("Error Occured..." + error);
+            }
+
+        }
+
+        makeBreakFast();
 
     </script>
 </body>
+
 </html>
